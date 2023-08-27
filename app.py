@@ -1,6 +1,5 @@
 # Bring in deps
-import os 
-from apikey import apikey
+import os
 from stable import stableai
 import streamlit as st
 import openai
@@ -274,10 +273,7 @@ stack = {
     "nine of diamond" : "52nd"
 }
 
-
-os.environ['OPENAI_API_KEY'] = apikey
-openai.api_key = apikey
-
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 # App framework
 st.title('🪄 WondertaleGPT 🃏')
