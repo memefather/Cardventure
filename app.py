@@ -298,7 +298,7 @@ title_template = PromptTemplate(
 
 story_template = PromptTemplate(
     input_variables = ['topic','title','number'], 
-    template='with this book title: {title}, write a 200 words original story involving a playing card: {topic} and a address at {number} Street. Make sure there is no other addresses, playing cards, or numbers in the story. Make sure the card comes before the address in the story.'
+    template='with this book title: {title}, write a 150 words original story involving a playing card: {topic} and a address at {number} Street. Make sure there is no other addresses, playing cards, or numbers in the story. Make sure the card comes before the address in the story.'
 )
 
 summary_template = PromptTemplate(
