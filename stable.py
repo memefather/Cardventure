@@ -4,7 +4,6 @@ def stableai(input):
     import io
     import warnings
     from PIL import Image
-    from apikey import appkey
     from stability_sdk import client
     import stability_sdk.interfaces.gooseai.generation.generation_pb2 as generation
 
@@ -18,12 +17,12 @@ def stableai(input):
     # https://dreamstudio.ai/account
 
     # Paste your API Key below.
-
-    os.environ['STABILITY_KEY'] = appkey
+    
+    stablekey = os.getenv("STABILITY_KEY")
 
     # Set up our connection to the API.
     stability_api = client.StabilityInference(
-        key=os.environ['STABILITY_KEY'], # API Key reference.
+        key=stablekey, # API Key reference.
         verbose=True, # Print debug messages.
         engine="stable-diffusion-xl-beta-v2-2-2", # Set the engine to use for generation.
         # Available engines: stable-diffusion-v1 stable-diffusion-v1-5 stable-diffusion-512-v2-0 stable-diffusion-768-v2-0
