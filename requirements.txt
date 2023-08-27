@@ -2,4 +2,3 @@ streamlit
 openai
 stability_sdk
 langchain
-warnings
