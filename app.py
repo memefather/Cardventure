@@ -320,34 +320,37 @@ story_chain = LLMChain(llm=llm, prompt=story_template, verbose=True, output_key=
 summary_chain = LLMChain(llm=llm, prompt=summary_template, verbose=True, output_key='summary', memory=summary_memory)
 
 #Show stuff to the screen if there's a prompt
-if prompt and number: 
-    title = title_chain.run(prompt)
-    #script = script_chain.run(title=title)
-    story = story_chain.run(topic=prompt, title=title, number=number)
-    summary = summary_chain.run(story=story)
+try:
+    if prompt and number: 
+        title = title_chain.run(prompt)
+        #script = script_chain.run(title=title)
+        story = story_chain.run(topic=prompt, title=title, number=number)
+        summary = summary_chain.run(story=story)
+        
     
-
-    # imageprompt = str(summary) + ' in futuristic style'
-
-    # response = openai.Image.create(
-    #     prompt=imageprompt,
-    #     n=1,
-    #     size="256x256"
-    # )
-    # image_url = response['data'][0]['url']
-
-    # st.image(image_url)
-    image = stableai(str(summary))
-    #image = Image.open('/Users/yzlbc8/cardventure/992446758.png')
-
-    st.write(title)
-    st.image(image)
-    #st.write(script)
-    st.write(story)
-    #st.write(summary)
-
-    # with st.expander('Title History'): 
-    #     st.info(title_memory.buffer)
-
-    # with st.expander('Script History'): 
-    #     st.info(script_memory.buffer)
+        # imageprompt = str(summary) + ' in futuristic style'
+    
+        # response = openai.Image.create(
+        #     prompt=imageprompt,
+        #     n=1,
+        #     size="256x256"
+        # )
+        # image_url = response['data'][0]['url']
+    
+        # st.image(image_url)
+        image = stableai(str(summary))
+        #image = Image.open('/Users/yzlbc8/cardventure/992446758.png')
+    
+        st.write(title)
+        st.image(image)
+        #st.write(script)
+        st.write(story)
+        #st.write(summary)
+    
+        # with st.expander('Title History'): 
+        #     st.info(title_memory.buffer)
+    
+        # with st.expander('Script History'): 
+        #     st.info(script_memory.buffer)
+except:
+    st.write("You chose wrong! Magician is never wrong! Try another Card.")
