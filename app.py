@@ -20,6 +20,32 @@ st.markdown(
     unsafe_allow_html=True
 )
 
+footer_html = """
+    <div class="footer">
+    <style>
+        .footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #f0f2f6;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        .footer a {
+            color: #4a4a4a;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            color: #3d3d3d;
+            text-decoration: underline;
+        }
+    </style>
+        Connect with me on <a href="https://www.linkedin.com/in/chiawei-chien" target="_blank">LinkedIn</a>. 
+        If you like this app, consider <a href="https://www.buymeacoffee.com/digitalmagic" target="_blank">buying me a coffee</a> ☕
+    </div>
+"""
+
 page_bg_img = f"""
 <style>
 [data-testid="stAppViewContainer"] > .main {{
@@ -382,3 +408,6 @@ try:
         #     st.info(script_memory.buffer)
 except:
     st.write("You chose wrong! Magician is never wrong! Try another Card.")
+
+# footer
+st.markdown(footer_html, unsafe_allow_html=True)
