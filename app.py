@@ -9,6 +9,8 @@ from langchain.chains import LLMChain#, SequentialChain
 from langchain.memory import ConversationBufferMemory
 from PIL import Image
 
+st.set_page_config(page_icon="📖", page_title="Cardventure")
+
 st.markdown(
     """
     <style>
@@ -33,7 +35,6 @@ background: rgba(0,0,0,0);
 </style>
 """
 
-st.set_page_config(page_icon="📖", page_title="Cardventure")
 st.markdown(page_bg_img, unsafe_allow_html=True)
 
 #dict for card stack
